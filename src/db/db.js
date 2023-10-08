@@ -13,7 +13,7 @@ db.connect((err) => {
     console.log("Error ao conectar ao bando de dados:", err);
     return;
   }
-  console.log("Conexão com o banco de dados Mysql estabelecida");
+  console.log("Conectado com o banco de dados Mysql");
 });
 
 module.exports = db;
