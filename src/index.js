@@ -41,8 +41,6 @@ async function gravarLog(message) {
   }
 }
 
-// gravarLog("Esta é uma mensagem de log de exemplo.");
-
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀HTTP server esta ativado ${port}`);
