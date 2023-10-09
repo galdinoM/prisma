@@ -9,11 +9,48 @@ generator client {
 
 datasource db {
   provider  = "mysql"
-  url       = "mysql://root:@127.0.0.1:5555/tripnode"
+  url       = env("DATABASE_URL")
 }
 
 model Viagem {
   id       Int      @id @default(autoincrement())
   titulo   String
   detalhe  String
+}
+
+model trip {
+  id               Int       @id @default(autoincrement())
+  title            String
+  sobre            String
+  hospedagem       String
+  roteiro          String
+  incluido         String
+  informacoesImportantes String
+  importancia      String
+  saidaHora        String
+  saidaData        DateTime
+  retornoHora      String
+  retornoData      DateTime
+  chegada          String
+  preco            Float
+  vagas            Int
+  agencia          String
+  rating           Int
+  imagemUrl        String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Pagamento {
+  id          Int       @id @default(autoincrement())
+  token       String
+  nome        String
+  sobrenome   String
+  email       String
+  aprovado    Boolean
+  telefone    String
+  valor       Float
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
